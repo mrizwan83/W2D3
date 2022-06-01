@@ -62,15 +62,6 @@ class Board
     end
 
     def empty_positions?
-        (0...@grid.length).each do |i1|
-            (0...@grid.length).each do |i2|
-                pos = [i1, i2]
-                if empty?(pos)
-                    return true
-                else
-                    return false
-                end
-            end
-        end
+        @grid.flatten.any? { |ele| ele == "_" }
     end
 end
